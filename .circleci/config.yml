@@ -11,4 +11,9 @@ jobs:
       - image: cimg/node:14.17.0
     steps:
       - checkout
-      - run: docker --version && node --version && npm --version
+      - run:
+          name: install deps
+          command: npm install
+      - run:
+          name: run tests
+          command: npm test
